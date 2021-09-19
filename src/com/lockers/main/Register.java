@@ -16,7 +16,7 @@ public class Register implements Serializable {
 	
 	
 	public void register() {
-		System.out.println("Inside Register");
+		new SerializationDemo(id, name, mail, password);
 	}
 
 	public int getId() {
@@ -57,4 +57,3 @@ public class Register implements Serializable {
 	}
 	
 }
-
