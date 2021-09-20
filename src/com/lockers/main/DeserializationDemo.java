@@ -5,9 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class DeserializationDemo {
@@ -51,6 +49,7 @@ public class DeserializationDemo {
 		} 
 	}
 	
+	
 //	public List<Register> getRegisteredUsers(){
 //		return regList;
 //	}
@@ -58,4 +57,45 @@ public class DeserializationDemo {
 		return mp;
 	}
 
+	
+ // deserialization creds
+	private Map<String,Credentials> credsMap = new HashMap<String,Credentials>();
+	
+	public DeserializationDemo(String fileName) {
+		try {
+			//read a file
+			FileInputStream file = new FileInputStream(fileName + "-db.txt");
+			
+			// creating a input object stream
+			
+			ObjectInputStream input = new ObjectInputStream(file);
+			
+			//method to de-serialize the object
+			
+			while(true) {
+				Credentials creds = (Credentials) input.readObject();
+				credsMap.put(creds.getSitename(),creds);
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch(EOFException e) {
+//			for(Register r: regList) {
+//				System.out.println(r.toString());
+//			}
+			
+			//Map
+			for(Map.Entry<String, Credentials> entry : credsMap.entrySet()) {
+				System.out.println(entry.getKey() + " " + entry.getValue().toString());
+			}
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
 }

@@ -69,6 +69,7 @@ public class MainClass {
 				break;
 			}
 		}
+		s.close();
 	
 	}
 
@@ -77,12 +78,16 @@ public class MainClass {
 		Map<String,Register> registeredUsers = new HashMap<String,Register>();
 		registeredUsers = ds.getRegisteredUsers();
 //		System.out.println(registeredUsers.get(username));
-		if(registeredUsers.get(username).getPassword().equals(password)) {
-			Loggedin loggedIn = new Loggedin(registeredUsers.get(username));
-			loggedIn.showMenu();
-		}
-		else {
-			System.out.println("Invalid Email/Password");
+		try {
+			if(registeredUsers.get(username).getPassword().equals(password)) {
+				Loggedin loggedIn = new Loggedin(registeredUsers.get(username));
+				loggedIn.showMenu();
+			}
+			else {
+				System.out.println("Invalid Email/Password");
+			}
+		} catch(NullPointerException ex) {
+			System.out.println("Account does not exist");
 		}
 	}
 
