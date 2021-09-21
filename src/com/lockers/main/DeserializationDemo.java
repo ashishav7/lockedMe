@@ -1,6 +1,7 @@
 package com.lockers.main;
 
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,17 +15,22 @@ public class DeserializationDemo {
 	public DeserializationDemo() {
 		try {
 			//read a file
+			
+			
 			FileInputStream file = new FileInputStream("file-db.txt");
 			
 			// creating a input object stream
 			
-			ObjectInputStream input = new ObjectInputStream(file);
 			
 			//method to de-serialize the object
-			
-			while(true) {
+			ObjectInputStream input = null;
+			while(file.available()>0) {
+				input = new ObjectInputStream(file);
 				Register user = (Register) input.readObject();
 				mp.put(user.getMail(), user);
+			}
+			for(Map.Entry<String, Register> entry : mp.entrySet()) {
+				System.out.println(entry.getKey() + " " + entry.getValue().toString());
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -35,10 +41,10 @@ public class DeserializationDemo {
 //				System.out.println(r.toString());
 //			}
 			
-			//Map
-//			for(Map.Entry<String, Register> entry : mp.entrySet()) {
-//				System.out.println(entry.getKey() + " " + entry.getValue().toString());
-//			}
+			for(Map.Entry<String, Register> entry : mp.entrySet()) {
+				System.out.println(entry.getKey() + " " + entry.getValue().toString());
+			}
+			
 		}
 		catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -68,13 +74,17 @@ public class DeserializationDemo {
 			
 			// creating a input object stream
 			
-			ObjectInputStream input = new ObjectInputStream(file);
+			ObjectInputStream input = null;
 			
 			//method to de-serialize the object
 			
-			while(true) {
+			while(file.available()>0) {
+				input = new ObjectInputStream(file);
 				Credentials creds = (Credentials) input.readObject();
 				credsMap.put(creds.getSitename(),creds);
+			}
+			for(Map.Entry<String, Credentials> entry : credsMap.entrySet()) {
+				System.out.println(entry.getKey() + " " + entry.getValue().toString());
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -86,9 +96,7 @@ public class DeserializationDemo {
 //			}
 			
 			//Map
-			for(Map.Entry<String, Credentials> entry : credsMap.entrySet()) {
-				System.out.println(entry.getKey() + " " + entry.getValue().toString());
-			}
+			
 		}
 		catch (IOException e) {
 			// TODO Auto-generated catch block

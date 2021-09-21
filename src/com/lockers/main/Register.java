@@ -1,5 +1,6 @@
 package com.lockers.main;
 
+import java.io.File;
 import java.io.Serializable;
 
 public class Register implements Serializable {
@@ -16,7 +17,8 @@ public class Register implements Serializable {
 	
 	
 	public void register() {
-		new SerializationDemo(id, name, mail, password);
+		
+			new SerializationDemo(id, name, mail, password);
 	}
 
 	public int getId() {

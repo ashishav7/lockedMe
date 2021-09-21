@@ -22,7 +22,7 @@ public class MainClass {
 		// TODO Auto-generated method stub
 		Scanner s = new Scanner(System.in);
 		boolean status = true;
-		while(status) {
+		do {
 			System.out.println("------------------------------------------------------");
 			System.out.println("                  Welcome to Lockers                  ");
 			System.out.println("------------------------------------------------------");
@@ -68,7 +68,7 @@ public class MainClass {
 				status = false;
 				break;
 			}
-		}
+		}while(status);
 		s.close();
 	
 	}
