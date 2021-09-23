@@ -19,17 +19,18 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 
-		// TODO Auto-generated method stub
-		Scanner s = new Scanner(System.in);
+	 	// TODO Auto-generated method stub
 		boolean status = true;
 		do {
+			Scanner s = new Scanner(System.in);
+			
 			System.out.println("------------------------------------------------------");
 			System.out.println("                  Welcome to Lockers                  ");
 			System.out.println("------------------------------------------------------");
 			System.out.println("1)Sign in");
 			System.out.println("2)Register");
 			System.out.println("3)Any other key to exit");
-			
+		
 			int c = s.nextInt();
 			switch(c) {
 			case 1:
@@ -61,21 +62,20 @@ public class MainClass {
 				}while(!validate(mail));
 				System.out.println("Enter your password");
 				String password = s.next();
-				Register register = new Register(id,name,mail,password);
-				register.register();
+				User user = new User(id,name,mail,password);
+				user.register();
 				break;
 			default:
 				status = false;
 				break;
 			}
 		}while(status);
-		s.close();
 	
 	}
 
 	private static void login(String username,String password) {
 		DeserializationDemo ds = new DeserializationDemo();
-		Map<String,Register> registeredUsers = new HashMap<String,Register>();
+		Map<String,User> registeredUsers = new HashMap<String,User>();
 		registeredUsers = ds.getRegisteredUsers();
 //		System.out.println(registeredUsers.get(username));
 		try {

@@ -1,6 +1,5 @@
 package com.lockers.main;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class SerializationDemo {
 			ObjectOutputStream out = new ObjectOutputStream(file); 
 			
 			// method to serialized object 
-			out.writeObject(new Register(id,name,mail,password));
+			out.writeObject(new User(id,name,mail,password));
 			
 			System.out.println("Serialization Complete");
 			//clean up
@@ -46,7 +45,7 @@ public class SerializationDemo {
 		try {
 			//create file output stream
 			FileOutputStream file = new FileOutputStream(fileName + "-db.txt",true);
-
+			
 			// create a object stream
 			ObjectOutputStream out = new ObjectOutputStream(file); 
 			

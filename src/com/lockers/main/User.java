@@ -3,11 +3,11 @@ package com.lockers.main;
 import java.io.File;
 import java.io.Serializable;
 
-public class Register implements Serializable {
+public class User implements Serializable {
 	private int id;
 	private String name,mail,password;
 	
-	public Register(int id, String name, String mail, String password) {
+	public User(int id, String name, String mail, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -17,7 +17,6 @@ public class Register implements Serializable {
 	
 	
 	public void register() {
-		
 			new SerializationDemo(id, name, mail, password);
 	}
 
@@ -35,7 +34,7 @@ public class Register implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Register [id=" + id + ", name=" + name + ", mail=" + mail + ", password=" + password + "]";
+		return "User [id=" + id + ", name=" + name + ", mail=" + mail + ", password=" + password + "]";
 	}
 
 	public void setName(String name) {
