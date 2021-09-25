@@ -1,10 +1,11 @@
-->  1. Heading of project 
+->  1. Locked Me 
 ---
-	1.1  project description
+	1.1  Project Description
 		1.1.2 Tech stack:	
 			-> Java
 			-> File Handling
-			-> datastructure
+			-> Data Structures
+			-> Exception Handling
 ---
 		
 -> 2. Archetecture diagram / flow chart
@@ -56,12 +57,17 @@ Sprint 3
 	
 -> Source code files
 
-	main.java
+	MainClass.java
+	LoggedIn.java
+	Serialization.java
+	Deserialization.java
+	Credentials.java
+	User.java
 	-----
 
 
 	--------
-	credential.txt
+	file-db.txt
 	----
 
 
