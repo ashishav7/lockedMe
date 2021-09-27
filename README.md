@@ -10,7 +10,7 @@
 			-> Deserialization
 ---
 		
--> 2. Archetecture diagram / flow chart
+-> 2. Process Flow Chart
 ---
 ![Process Flow Chart](screenshots/process-flow.jpg)
 
@@ -64,4 +64,24 @@ Sprint 2 (4 days)
 	User.java
 	-----
 
-5. Take Output Screen shot
+5. Some Output Screenshots
+	
+	**Home Screen**
+	---
+	![Process Flow Chart](screenshots/mainscreen.jpg)
+	---
+	
+	**Logged In Screen**
+	---
+	![Process Flow Chart](screenshots/loginsuccess.jpg)
+	---
+	
+	**Insert Credentials**
+	---
+	![Process Flow Chart](screenshots/insertcreds.jpg)
+	---
+	
+	**Fetch Credentials**
+	---
+	![Process Flow Chart](screenshots/fetchCredentials.jpg)
+	---
