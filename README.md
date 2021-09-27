@@ -12,7 +12,8 @@
 		
 -> 2. Archetecture diagram / flow chart
 ---
-screen shot image
+![Process Flow Chart](screenshots/process-flow.jpg)
+
 ---
 
 -> 2. Project Users Stories : ( Agile and Scrum )
