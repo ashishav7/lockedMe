@@ -51,8 +51,6 @@ public class SerializationDemo {
 			
 			// method to serialized object 
 			out.writeObject(new Credentials(username,password,siteName));
-			
-			System.out.println("Record Inserted");
 			//clean up
 			out.close();
 			file.close();
