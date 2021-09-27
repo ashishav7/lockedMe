@@ -6,6 +6,8 @@
 			-> File Handling
 			-> Data Structures
 			-> Exception Handling
+			-> Serialization
+			-> Deserialization
 ---
 		
 -> 2. Archetecture diagram / flow chart
