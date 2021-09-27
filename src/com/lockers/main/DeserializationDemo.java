@@ -14,7 +14,7 @@ public class DeserializationDemo {
 		try {
 			
 			FileInputStream file = new FileInputStream("file-db.txt");
-			
+		
 			
 			//method to de-serialize the object
 			ObjectInputStream input = null;
@@ -24,52 +24,33 @@ public class DeserializationDemo {
 				mp.put(user.getMail(), user);
 			}
 			file.close();
-			for(Map.Entry<String, User> entry : mp.entrySet()) {
-				System.out.println(entry.getKey() + " " + entry.getValue().toString());
-			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return;
+			System.out.println("No users Registered , please register a user before login");
 		}
 		catch(EOFException e) {
-//			
-//			for(Map.Entry<String, User> entry : mp.entrySet()) {
-//				System.out.println(entry.getKey() + " " + entry.getValue().toString());
-//			}
-			
+			e.printStackTrace();
 		}
 		catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 	}
-	
-	
-//	public List<Register> getRegisteredUsers(){
-//		return regList;
-//	}
 	public Map<String,User> getRegisteredUsers(){
 		return mp;
 	}
 
 	
- // deserialization creds
+// deserialization creds
 	private Map<String,Credentials> credsMap = new HashMap<String,Credentials>();
 	
 	public DeserializationDemo(String fileName) {
 		try {
-			//read a file
 			FileInputStream file = new FileInputStream(fileName + "-db.txt");
 			
-			// creating a input object stream
 			
 			ObjectInputStream input = null;
 			
-			//method to de-serialize the object
 			
 			while(file.available()>0) {
 				input = new ObjectInputStream(file);
@@ -77,20 +58,12 @@ public class DeserializationDemo {
 				credsMap.put(creds.getSitename(),creds);
 			}
 			file.close();
-			for(Map.Entry<String, Credentials> entry : credsMap.entrySet()) {
-				System.out.println(entry.getKey() + " " + entry.getValue().toString());
-			}
+			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.out.println("please register a credential before using!");
 		}
 		catch(EOFException e) {
-//			for(Register r: regList) {
-//				System.out.println(r.toString());
-//			}
-			
-			//Map
-			
+
 		}
 		catch (IOException e) {
 			// TODO Auto-generated catch block

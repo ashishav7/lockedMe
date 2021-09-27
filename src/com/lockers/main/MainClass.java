@@ -39,7 +39,7 @@ public class MainClass {
 					System.out.println("Enter email");
 					email = s.next();
 					if(!validate(email)) {
-						System.out.println("Invalid email, please enter again");
+						System.out.println("Invalid email type, please enter again");
 					}
 				}while(!validate(email));
 				

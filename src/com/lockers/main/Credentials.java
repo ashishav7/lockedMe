@@ -32,7 +32,7 @@ public class Credentials implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Creds [username=" + username + ", password=" + password + ", sitename=" + sitename + "]";
+		return sitename + " credentials [username=" + username + ", password=" + password + "]";
 	}
 	
 	public void insert(String fileName) {

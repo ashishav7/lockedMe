@@ -30,7 +30,7 @@ public class SerializationDemo {
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("No users registered");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,7 +62,6 @@ public class SerializationDemo {
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.out.println("IO exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 }
